@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           /* 이서윤체 폰트 적용을 위한 코드 */
+        @font-face {
+          font-family: "LeeSeoyun";
+          src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+           format("woff");
+            font-weight: normal;
+            font-style: normal;
+         }
+
+            /* body 태그 자체에 css 요소 부여 : 폰트, 마진, 플렉시블디스플레이, 가운데정렬, 배경이미지 */
+         body {
+            font-family: "LeeSeoyun";
+            margin: 0%;
+            display: flex;
+            justify-content: center;
+            background-image: url(./background.png);
+         }
+
+            /* container : 너비 지정, 배경색 #ff9d73로 지정, body 전체의 높이 사용 */
+         .container {
+            width: 390px;
+            background-color: #ff9d73;
+            height: 100%;
+         }
+
+            /* 사진영역 : 위로 30픽셀 여유 */
+         .photos {
+            margin-top: 30px;
+         }
+
+            /* 각각의 사진영역 : 배경 흰색, 좌우 마진 20픽셀, 상하 마진 15픽셀, 높이 각 사진별로 300픽셀 */
+         .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 300px;
+            background-size: cover;
+
+            /* 설명 글의 위치를 가운데 아래로 내리기 위한 설정*/
+            position: relative;
+         }
+
+            /* 이미지 삽입하기 */
+        #img1 {
+            background-image: url("./img 1.png.webp")
+        }
+
+        #img2 {
+            background-image: url("./img 2.jpg")
+        }
+        
+        #img3 {
+            background-image: url("./img 3.jpg")
+        }
+        
+        #img4 {
+            background-image: url("./img 4.jpg")
+        }
+
+            /* 사진 설명 : 배경 투명도를 주고 검게, 글자는 흰색으로. 가로너비는 내부 콘텐츠에 딱 맞게, 경계선 공간두기 */
+        .photo-discription {
+            color: white;
+            background-color: rgb(78, 61, 61);
+
+            width: fit-content;
+            padding: 0 20px;
+            margin-bottom: 10px;
+
+            border-radius: 10px;
+
+            text-align-last: center;
+
+            /* 설명 글의 위치를 가운데 아래로 내리기 위한 설정*/
+            position: absolute;
+            bottom: 0;
+            transform:  translate(-50%);
+            left: 50%;
+        }
+
+            /* footer : 플렉시블 디스플레이, 내부 아이템들은 세로정렬로 고정. 모두 가운데 정렬 */
+         .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+
+            /* f-title : 두꺼운 폰트, 25픽셀, 흰색 */
+         .f-title {
+            font-size: 25px;
+            font-weight: 900;
+            color: white;
+         }
+
+            /* f-date : 중간두께 폰트, 15픽셀, 흰색 */
+        .f-date {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            }
+
+            /* opacity : 투명도를 의미해요! opacity는 1에 가까워 질 수록 불투명하다. 즉 다 보인다. */
+        .showText {
+            opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+
+        /* opacity : 투명도를 의미해요! opacity는 0에 가까워 질 수록 투명하다. 즉 안보인다. */
+        /* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */
+        .hideText {
+            opacity: 0;
+        }    
+        
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="img1" class="photo-frame"> 
+                <span id="disc 1" class="photo-discription">
+                    달콤한 눈빛으로 <br> 나를 바라보는 기호
+                </span> 
+            </div>
+            <div id="img2" class="photo-frame"> 
+                <span id="disc 2" class="photo-discription">
+                    같이 있을 때면 <br>  항상 행복해
+                </span>  
+            </div>
+            <div id="img3" class="photo-frame"> 
+                <span id="disc 3" class="photo-discription">
+                    언제나 함께하면서
+                </span>  
+            </div>
+            <div id="img4" class="photo-frame">
+                <span id="disc 4" class="photo-discription">
+                    행복한 매일을 만들자♥
+                </span>  
+            </div>
+        </div>
+        <div class="footer">
+            <p class="f-title">
+                ★기호와의 소중한 순간들★
+            </p>
+            <dp class="f-date"> 
+                2023.03.14
+            </p>
+        </div>
+    </div>
+</body>
+</html>
